@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { MemoryRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ function App(props) {
     <div className={props.className}>
       <Router>
         <NavBar />
-        <CompanyDetails />
+        <Search />
         {/* <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/search" component={Search} />

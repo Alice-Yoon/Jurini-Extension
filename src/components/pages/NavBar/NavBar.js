@@ -11,7 +11,11 @@ function NavBar(props) {
     return (
         <div className={props.className}>
             <h1>주린이 달력</h1>
-            <img src={ isHome? introduction_icon : calendar_icon } alt="icon" className="icon_style" />
+            <img 
+                src={ isHome? introduction_icon : calendar_icon } 
+                alt="icon" 
+                className="icon_style"
+            />
         </div>
     )
 }
@@ -31,6 +35,9 @@ export default styled(NavBar)`
         .icon_style {
             width: 40px;
             height: 40px;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 `;

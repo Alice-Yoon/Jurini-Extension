@@ -5,26 +5,31 @@ import CardList from '../../commons/CardList';
 
 import back_key from '../../../assets/img/back_key.png';
 import { cardDummyData } from '../../../assets/dummy/cardDummyData';
+import DefaultCard from './Section/DefaultCard';
 
 function Search(props) {
 
-    const [searchResults, setSearchResults] = useState(true);
+    const [searchResults, setSearchResults] = useState(false);
 
     return (
         <div className={props.className}>
             <img src={back_key} alt="back_key" className="icon_style" />
             <SearchBar />
-            {searchResults && 
+            {searchResults ? 
                 <div className="card-container">
                     {cardDummyData && cardDummyData.map(data => <CardList data={data} />)}
                 </div>
-            }
+                    :
+                <div className="card-container">
+                    <DefaultCard />
+                </div>
+                }
         </div>
     )
 }
 
 export default styled(Search)`
-    border: 2px solid green;
+    /* border: 2px solid green; */
     height: 478px;
 
     & {
