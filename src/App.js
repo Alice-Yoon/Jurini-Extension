@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import { MemoryRouter as Router, Switch, Route } from 'react-router-dom';
 
-function App() {
+
+
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={props.className}>
+      <Router>
+      Jurini Extension
+
+      </Router>
     </div>
   );
 }
 
-export default App;
+export default styled(App)`
+  border: 2px solid black;
+  width: 350px;
+  height: 550px;
+`;
