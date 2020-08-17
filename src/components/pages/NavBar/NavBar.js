@@ -17,7 +17,7 @@ function NavBar(props) {
 }
 
 export default styled(NavBar)`
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     background-color: #D3D3D3;
     padding-right: 20px;
     padding-left: 10px;
