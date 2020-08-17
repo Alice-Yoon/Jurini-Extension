@@ -14,7 +14,7 @@ function App(props) {
     <div className={props.className}>
       <Router>
         <NavBar />
-        <Introduction />
+        <CompanyDetails />
         {/* <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/search" component={Search} />
