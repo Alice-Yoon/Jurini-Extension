@@ -42,7 +42,13 @@ function CompanyDetails(props) {
 
 export default styled(CompanyDetails)`
     /* border: 2px solid green; */
+    background-color: #fff;
     height: 478px;
+    width: 346px;
+
+    position: fixed;
+    top: 70px;
+
 
     & {
         .closeBtnStyle {
