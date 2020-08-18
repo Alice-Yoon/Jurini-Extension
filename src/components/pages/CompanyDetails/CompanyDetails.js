@@ -12,15 +12,13 @@ import DetailsNews from './Section/DetailsNews';
 function CompanyDetails(props) {
 
     const dispatch = useDispatch();
-    const onClose = (payload) => dispatch(toggleDetails(payload));
+    const closeDetails = (payload) => dispatch(toggleDetails(payload));
 
     const onClickToClose = (e) => {
         const id = e.target.id;
 
         if(id === "closeBtn" || id === "container") {
-            // console.log("click to close!", e.target.id);
-            // toggleCompanyDetails();
-            onClose(false);
+            closeDetails(false);
         }
     }
 
