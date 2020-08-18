@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { toggleDetails } from '../../modules/details';
 
 function CardList(props) {
 
@@ -7,11 +9,22 @@ function CardList(props) {
 
     useEffect(() => {
         setIsDividendDate(props.data.isDividendDate);
-    }, [])
+    }, []);
+
+    const dispatch = useDispatch();
+    const openDetails = (payload) => dispatch(toggleDetails(payload));
+
+    const onClick = () => {
+        openDetails(true);
+    }
 
 
     return (
-        <div className={props.className} style={{ borderLeft: `2.5px solid ${isDividendDate ? 'green' : 'orange'}`}} >
+        <div 
+            className={props.className} 
+            style={{ borderLeft: `2.5px solid ${isDividendDate ? 'green' : 'orange'}`}} 
+            onClick={onClick}
+        >
             <div className="leftSectionStyle">
                 <span className="smallBoxStyle">
                     {isDividendDate ? '배당지급일' : '배당락일 D-3'}

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { toggleDetails } from '../../../modules/details';
 
 import DetailsCard from './Section/DetailsCard';
 import DetailsTable from './Section/DetailsTable';
@@ -8,9 +10,9 @@ import DetailsCalculator from './Section/DetailsCalculator';
 import DetailsNews from './Section/DetailsNews';
 
 function CompanyDetails(props) {
-    // const { showCompanyDetails, toggleCompanyDetails } = props;
-    const [showCompanyDetails, setShowCompanyDetails] = useState(true);
 
+    const dispatch = useDispatch();
+    const onClose = (payload) => dispatch(toggleDetails(payload));
 
     const onClickToClose = (e) => {
         const id = e.target.id;
@@ -18,6 +20,7 @@ function CompanyDetails(props) {
         if(id === "closeBtn" || id === "container") {
             // console.log("click to close!", e.target.id);
             // toggleCompanyDetails();
+            onClose(false);
         }
     }
 
@@ -41,13 +44,13 @@ function CompanyDetails(props) {
 }
 
 export default styled(CompanyDetails)`
-    /* border: 2px solid green; */
+    /* border: 1px solid green; */
     background-color: #fff;
-    height: 478px;
-    width: 346px;
+    height: 550px;
+    width: 350px;
 
     position: fixed;
-    top: 70px;
+    top: 10px;
 
 
     & {

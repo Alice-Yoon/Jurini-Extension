@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import { MemoryRouter as Router, Switch, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import NavBar from './components/pages/NavBar/NavBar';
 import Home from './components/pages/Home/Home';
@@ -11,8 +12,7 @@ import CompanyDetails from './components/pages/CompanyDetails/CompanyDetails';
 
 function App(props) {
 
-  const [toggleDetails, setToggleDetails] = useState(false);
-
+  const isShowCompanyDetails = useSelector(state => state.details.isShow);
 
   return (
     <div className={props.className}>
@@ -25,7 +25,7 @@ function App(props) {
           {/* <Route exact path="/details" component={CompanyDetails} /> */}
         </Switch>
         {
-          toggleDetails ? <CompanyDetails /> : null
+          isShowCompanyDetails ? <CompanyDetails /> : null
         }
       </Router>
     </div>

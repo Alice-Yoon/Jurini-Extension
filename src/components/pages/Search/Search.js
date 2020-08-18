@@ -11,7 +11,7 @@ import DefaultCard from './Section/DefaultCard';
 
 function Search(props) {
 
-    const [searchResults, setSearchResults] = useState(false);
+    const [searchResults, setSearchResults] = useState(true);
 
     return (
         <div className={props.className}>
