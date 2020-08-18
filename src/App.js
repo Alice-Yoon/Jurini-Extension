@@ -33,7 +33,7 @@ function App(props) {
 }
 
 export default styled(App)`
-  border: 2px solid black;
+  border: 1px solid black;
   width: 350px;
   height: 550px;
 `;

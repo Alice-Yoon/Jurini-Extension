@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { toggleCards, updateValue } from '../../../modules/search';
 
 import SearchBar from './Section/SearchBar';
 import CardList from '../../commons/CardList';
@@ -11,12 +14,20 @@ import DefaultCard from './Section/DefaultCard';
 
 function Search(props) {
 
-    const [searchResults, setSearchResults] = useState(true);
+    const searchResults = useSelector(state => state.search.isShow);
+    const dispatch = useDispatch();
+    const onToggleCards = (payload) => dispatch(toggleCards(payload));
+    const onUpdateValue = (payload) => dispatch(updateValue(payload));
+
+    const onClickBackKey = () => {
+        onToggleCards(false);
+        onUpdateValue('');
+    }
 
     return (
         <div className={props.className}>
             <Link to="/">
-                <img src={back_key} alt="back_key" className="icon_style" />
+                <img src={back_key} alt="back_key" className="icon_style" onClick={onClickBackKey} />
             </Link>
             <SearchBar />
             {searchResults ? 

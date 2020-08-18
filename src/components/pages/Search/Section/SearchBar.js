@@ -1,23 +1,30 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { toggleCards, updateValue } from '../../../../modules/search';
 
-import search_icon from '../../../../assets/img/search_icon.png';
+// import search_icon from '../../../../assets/img/search_icon.png';
 
 function SearchBar(props) {
 
     const [value, setValue] = useState('');
+    
+    const dispatch = useDispatch();
+    const onToggleCards = (payload) => dispatch(toggleCards(payload));
+    const onUpdateValue = (payload) => dispatch(updateValue(payload));
 
     const onChange = (e) => {
-        // setValue(e.target.value);
+        setValue(e.target.value);
     }
 
     const onSubmit = (e) => {
         e.preventDefault();
-        // toggleShowSearchResult(value);
+        onToggleCards(true);
+        onUpdateValue(value);
     }
 
     const onClickEmpty = () => {
-        // setValue('');
+        setValue('');
     }
 
     return (

@@ -48,7 +48,7 @@ export default styled(CompanyDetails)`
     width: 350px;
 
     position: fixed;
-    top: 10px;
+    top: 8px;
 
 
     & {
