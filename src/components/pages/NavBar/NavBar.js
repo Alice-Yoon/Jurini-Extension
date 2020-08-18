@@ -9,14 +9,14 @@ function NavBar(props) {
 
     const [isHome, setIsHome] = useState(true);
 
-    // const toggleIsHome = () => {
-    //     setIsHome(!isHome);
-    // }
+    const toggleIsHome = () => {
+        setIsHome(!isHome);
+    }
 
     return (
         <div className={props.className}>
             <h1>주린이 달력</h1>
-            {/* {isHome ? 
+            {isHome ? 
                 <Link to="/introduction">
                     <img src={introduction_icon} alt="introduction_icon" className="icon_style" onClick={toggleIsHome} />
                 </Link>
@@ -24,7 +24,7 @@ function NavBar(props) {
                 <Link to="/">
                     <img src={calendar_icon} alt="calendar_icon" className="icon_style" onClick={toggleIsHome} />
                 </Link>
-            } */}
+            }
         </div>
     )
 }
