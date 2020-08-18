@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 import search_icon from '../../../../assets/img/search_icon.png'
 
@@ -21,9 +22,9 @@ function DropDown(props) {
                    <option value="finance">금융주</option>
                </select>
            </div>
-           <div>
+           <Link to="/search">
                <img src={search_icon} alt="search_icon" className="icon_style" />
-           </div>
+           </Link>
         </div>
     )
 }

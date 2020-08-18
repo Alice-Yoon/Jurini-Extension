@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 import calendar_icon from '../../../assets/img/calendar_icon.png';
 import introduction_icon from '../../../assets/img/introduction_icon.png';
@@ -8,14 +9,22 @@ function NavBar(props) {
 
     const [isHome, setIsHome] = useState(true);
 
+    // const toggleIsHome = () => {
+    //     setIsHome(!isHome);
+    // }
+
     return (
         <div className={props.className}>
             <h1>주린이 달력</h1>
-            <img 
-                src={ isHome? introduction_icon : calendar_icon } 
-                alt="icon" 
-                className="icon_style"
-            />
+            {/* {isHome ? 
+                <Link to="/introduction">
+                    <img src={introduction_icon} alt="introduction_icon" className="icon_style" onClick={toggleIsHome} />
+                </Link>
+                :
+                <Link to="/">
+                    <img src={calendar_icon} alt="calendar_icon" className="icon_style" onClick={toggleIsHome} />
+                </Link>
+            } */}
         </div>
     )
 }
