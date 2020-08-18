@@ -14,13 +14,12 @@ function App(props) {
     <div className={props.className}>
       <Router>
         <NavBar />
-        <Search />
-        {/* <Switch>
+        <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/introduction" component={Introduction} />
           <Route exact path="/details" component={CompanyDetails} />
-        </Switch> */}
+        </Switch>
       </Router>
     </div>
   );

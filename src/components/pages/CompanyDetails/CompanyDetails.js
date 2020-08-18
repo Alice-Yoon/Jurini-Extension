@@ -42,6 +42,7 @@ function CompanyDetails(props) {
 
 export default styled(CompanyDetails)`
     /* border: 2px solid green; */
+    /* background-color: rgba(0,0,0,0.5); */
     height: 478px;
 
     & {
