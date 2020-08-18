@@ -10,6 +10,10 @@ import CompanyDetails from './components/pages/CompanyDetails/CompanyDetails';
 
 
 function App(props) {
+
+  const [toggleDetails, setToggleDetails] = useState(false);
+
+
   return (
     <div className={props.className}>
       <Router>
@@ -18,8 +22,11 @@ function App(props) {
           <Route exact path="/" component={Home} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/introduction" component={Introduction} />
-          <Route exact path="/details" component={CompanyDetails} />
+          {/* <Route exact path="/details" component={CompanyDetails} /> */}
         </Switch>
+        {
+          toggleDetails ? <CompanyDetails /> : null
+        }
       </Router>
     </div>
   );

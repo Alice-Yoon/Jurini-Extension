@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
+
 import SearchBar from './Section/SearchBar';
 import CardList from '../../commons/CardList';
 
@@ -13,7 +15,9 @@ function Search(props) {
 
     return (
         <div className={props.className}>
-            <img src={back_key} alt="back_key" className="icon_style" />
+            <Link to="/">
+                <img src={back_key} alt="back_key" className="icon_style" />
+            </Link>
             <SearchBar />
             {searchResults ? 
                 <div className="card-container">
